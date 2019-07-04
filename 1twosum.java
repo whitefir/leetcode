@@ -1,5 +1,7 @@
-int是基本数据类型， Integer是引用数据类型；
-Integer是int的包装类，int的初值为0，Integer的初值为null;
+/*
+int鏄熀鏈暟鎹被鍨嬶紝 Integer鏄紩鐢ㄦ暟鎹被鍨嬶紱
+Integer鏄痠nt鐨勫寘瑁呯被锛宨nt鐨勫垵鍊间负0锛孖nteger鐨勫垵鍊间负null;
+*/
 
 
 class Solution{
