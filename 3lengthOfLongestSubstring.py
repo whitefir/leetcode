@@ -1,18 +1,16 @@
-public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        int n = s.length();
-        Set<Character> set = new HashSet<>();
-        int ans = 0, i = 0, j = 0;
-        while (i < n && j < n) {
-            // try to extend the range [i, j]
-            if (!set.contains(s.charAt(j))){
-                set.add(s.charAt(j++));
-                ans = Math.max(ans, j - i);
-            }
-            else {
-                set.remove(s.charAt(i++));
-            }
-        }
-        return ans;
-    }
-}
+class Solution:
+    def lengthOfLongestSubstring(self, s: str)->int:
+        n=len(s)
+        set1=set()
+        ans=0
+        left=0
+        right=0
+        while left<n and right<n:
+            if s[left] in set1:
+                set1.remove(s[right])
+                right+=1
+            else:
+                set1.add(s[left])
+                left+=1
+                ans=max(ans, left-right)
+        return ans
