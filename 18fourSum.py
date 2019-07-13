@@ -5,12 +5,16 @@ class Solution:
         numlen=len(nums)
         
         for nmin in range(numlen-3):#nums[nmin]
+            if nmin>0 and nums[nmin]==nums[nmin-1]:
+                continue
             if target<nums[nmin]+nums[nmin+1]+nums[nmin+2]+nums[nmin+3]:
                 break
             if target>nums[nmin]+nums[numlen-1]+nums[numlen-2]+nums[numlen-3]:
                 continue
             
             for tmp in range(nmin+1,numlen-2):#nums[tmp]
+                if tmp>nmin+1 and nums[tmp]==nums[tmp-1]:
+                    continue
                 if target<nums[nmin]+nums[tmp]+nums[tmp+1]+nums[tmp+2]:
                     break
                 if target>nums[nmin]+nums[tmp]+nums[numlen-1]+nums[numlen-2]:
