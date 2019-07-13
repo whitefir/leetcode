@@ -1,15 +1,17 @@
 # leetcode
-1.字典（Hashmap）
+1. 字典（Hashmap）
 
-2.三目运算符
+2. 三目运算符
 
-3.滑动窗口
+3. 滑动窗口
 
-7.位运算
+7. 位运算
 
-9.切片
+9. 切片
 
-136.set(), XOR 满足交换律和结合律
+18. 剪枝条件
+
+136. set(), XOR 满足交换律和结合律
 
 169. collections.Counter(), Boyer-Moore
 
