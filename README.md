@@ -11,6 +11,8 @@
 
 136.set(), XOR 满足交换律和结合律
 
+169. collections.Counter(), Boyer-Moore
+
 237
 
 292
