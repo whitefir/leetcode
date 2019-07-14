@@ -17,6 +17,8 @@
 
 169* 求众数：collections.Counter(), Boyer-Moore
 
+226* 翻转二叉树：BFS(queue),DFS(stack)
+
 229* 求众数2
 
 237* 删除链表中的节点
