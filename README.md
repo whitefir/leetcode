@@ -13,6 +13,8 @@
 
 136* 只出现一次的数字：set(), XOR 满足交换律和结合律
 
+141* 环形链表：快慢指针
+
 160* 相交链表：m+s+n=n+s+m
 
 169* 求众数：collections.Counter(), Boyer-Moore
