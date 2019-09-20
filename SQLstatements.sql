@@ -20,3 +20,8 @@ SELECT Person.FirstName, Person.LastName, Address.City, Address.State
 FROM Person
 LEFT JOIN Address
 ON Person.PersonId=Address.PersonId
+
+SELECT a.Name AS 'Employee'
+FROM Employee AS a,
+     Employee AS b
+WHERE a.ManagerId = b.Id AND a.Salary > b.Salary
