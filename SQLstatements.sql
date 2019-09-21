@@ -27,7 +27,7 @@ FROM Employee AS a,
 WHERE a.ManagerId = b.Id AND a.Salary > b.Salary
 
 SELECT Name AS Customers
-FROM Customers c 
-LEFT JOIN Orders o
-ON c.Id=o.CustomerId
-WHERE o.CustomerId IS null
+FROM Customers
+LEFT JOIN Orders
+ON Customers.Id=Orders.CustomerId
+WHERE Orders.CustomerId IS null
