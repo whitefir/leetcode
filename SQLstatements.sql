@@ -39,3 +39,8 @@ WHERE p1.Email = p2.Email AND p1.Id > p2.Id
 select w1.Id
 from Weather w1, Weather w2
 where DATEDIFF(w1.RecordDate,w2.RecordDate)=1 and w1.Temperature>w2.Temperature
+
+SELECT class 
+FROM courses 
+GROUP BY class
+HAVING COUNT(distinct student)>=5
