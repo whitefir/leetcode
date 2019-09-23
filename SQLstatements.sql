@@ -35,3 +35,7 @@ WHERE Orders.CustomerId IS null
 DELETE p1
 FROM Person as p1, Person as p2
 WHERE p1.Email = p2.Email AND p1.Id > p2.Id
+
+select w1.Id
+from Weather w1, Weather w2
+where DATEDIFF(w1.RecordDate,w2.RecordDate)=1 and w1.Temperature>w2.Temperature
