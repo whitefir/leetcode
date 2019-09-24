@@ -44,3 +44,11 @@ SELECT class
 FROM courses 
 GROUP BY class
 HAVING COUNT(distinct student)>=5
+
+SELECT
+    IFNULL(
+      (SELECT DISTINCT Salary
+       FROM Employee
+       ORDER BY Salary DESC
+        LIMIT 1 OFFSET 1),
+    NULL) AS SecondHighestSalary
