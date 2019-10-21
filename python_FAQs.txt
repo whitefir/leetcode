@@ -209,9 +209,20 @@ autopep8, pylint
 
 31.将"hello world"转换为首字母大写"Hello World"
 
-a = 'hello world'  
+a = "hello world"
 b = ' '.join(i.capitalize() for i in a.split(' ')) 
 print(b)
+
+re:
+import re
+a = "hello world"
+
+def repl(m):
+    return m.group(1)+m.group(2).upper()
+
+b = re.sub("(^|\s)(\S)", repl, a)
+print(b)
+
 
 32.如何检测字符串中只含有数字?
 
@@ -230,14 +241,32 @@ print(a[::-1])
 
 def str_strip(s):
     return s.strip()
+    
+re:
+re.sub("(^\s+)|(\s+$)", '', s)
 
 36.获取字符串”123456“最后的两个字符。
 
 a="123456"
 print(a[-2:])
 
+re:
+re.search("\S{2}$",s).group(0)
+
 37.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
+
+S.decode('gbk').encode('utf-8')
+
 38. (1)s="info：xiaoZhang 33 shandong"，用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong'](2) a = "你好 中国 "，去除多余空格只留一个空格。
+
+
+
+
+
+
+
+
+
 39. (1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？
 
 列表
@@ -262,6 +291,10 @@ print(l)
 
 32.给定两个 list，A 和 B，找出相同元素和不同元素
 33.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
+
+a=[[1,2],[3,4],[5,6]]
+x=[j for i in a for j in i]
+
 34.合并列表[1,5,7,9]和[2,2,6,8]
 35.如何打乱一个列表的元素？
 
