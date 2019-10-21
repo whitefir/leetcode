@@ -259,19 +259,44 @@ S.decode('gbk').encode('utf-8')
 
 38. (1)s="info：xiaoZhang 33 shandong"，用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong'](2) a = "你好 中国 "，去除多余空格只留一个空格。
 
+(1)
+re.split("(\W+)",s)
+#re.findall("(\w+)",s)
 
+(2)
+re.sub("\s+", ' ', s)
 
-
-
-
-
-
+re.match(pattern, string, flags=0)
+re.search(pattern, string, flags=0)
+re.sub(pattern, repl, string, count=0, flags=0)
+re.compile(pattern[, flags])
+re.findall(string[, pos[, endpos]])
+re.finditer(pattern, string, flags=0)
+re.split(pattern, string[, maxsplit=0, flags=0])
 
 39. (1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？
 
+(1)
+s.lower()
+
+#str.swapcase() 大小写同时互换
+
+def repl(m):
+    if m.group(1):
+        return m.group(1).upper()
+    if m.group(2):
+        return m.group(2).lower()
+
+b=re.sub("([a-z])|([A-Z])",repl,s)
+print(b)
+
+(2)
+单引号，双引号同用法
+三引号所见即所得，或多行注释
+
 列表
 
-*30.已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。
+40.已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。
 
 AList=[1,2,3,1,2]
 B=[]
@@ -280,7 +305,7 @@ for i in L.items():
     B.append(i[0])
 print(B)
 
-31.如何实现 "1,2,3" 变成 ["1","2","3"]
+41.如何实现 "1,2,3" 变成 ["1","2","3"]
 
 a="1,2,3"
 l=[]
@@ -289,18 +314,43 @@ for i in a:
         l.append(i)
 print(l)
 
-32.给定两个 list，A 和 B，找出相同元素和不同元素
-33.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
+42.给定两个 list，A 和 B，找出相同元素和不同元素
+
+C=[x for x in A if x in B]
+D=[y for y in (A+B) if y not in C]
+
+43.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
 
 a=[[1,2],[3,4],[5,6]]
 x=[j for i in a for j in i]
 
-34.合并列表[1,5,7,9]和[2,2,6,8]
-35.如何打乱一个列表的元素？
+44.合并且排序两无序列表[3,1,9,7,5]和[8,4,2,6]
+
+C=A+B
+C.sort()
+print(C)
+
+45.如何打乱一个列表的元素？
+
+import random
+
+x = [i for i in range(10)]
+random.shuffle(x)
+print(x)
 
 字典
 
-36.字典操作中 del 和 pop 有什么区别
+*36.字典操作中 del 和 pop 有什么区别
+
+
+
+
+
+
+
+
+
+
 37.按照字典的内的年龄排序
 <img src="https://pic2.zhimg.com/50/v2-f0c87fcad0839af06187a4def1706f51_hd.jpg" data-caption="" data-size="normal" data-rawwidth="834" data-rawheight="124" class="origin_image zh-lightbox-thumb" width="834" data-original="https://pic2.zhimg.com/v2-f0c87fcad0839af06187a4def1706f51_r.jpg"/>
 38.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
