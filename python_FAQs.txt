@@ -5,7 +5,7 @@
 
 1.列出 5 个常用 Python 标准库？
 
-math re os sys time collections queue
+math re os sys time collections queue random
 
 2.Python 内建数据类型有哪些？
 
@@ -340,39 +340,96 @@ print(x)
 
 字典
 
-*36.字典操作中 del 和 pop 有什么区别
+46.字典操作中 del 和 pop 有什么区别
 
+del 全局方法，pop 字典方法
 
+dict.pop(key)  必须给出key，返回被删除的值
+del dict[key]  给出key,删除单一条目
+del dict  删除字典
 
+47.按照字典内的年龄排序
+d1=[
+    {'name':'alice', 'age':38},
+    {'name':'bob', 'age':18},
+    {'name':'carl', 'age':28},
+]
 
+sorted_d1 = sorted(d1, key=operator.itemgetter('age'))
 
+48.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
 
+a.update(b)
 
+？49.如何使用生成式的方式生成一个字典，写一段功能代码。
 
+d2={k : v for k,v in d1.items()}
+？？？？？？？？？？？
 
+50.如何把元组("a","b")和元组(1,2)，变为字典{"a":1,"b":2}
 
-37.按照字典的内的年龄排序
-<img src="https://pic2.zhimg.com/50/v2-f0c87fcad0839af06187a4def1706f51_hd.jpg" data-caption="" data-size="normal" data-rawwidth="834" data-rawheight="124" class="origin_image zh-lightbox-thumb" width="834" data-original="https://pic2.zhimg.com/v2-f0c87fcad0839af06187a4def1706f51_r.jpg"/>
-38.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
-39.如何使用生成式的方式生成一个字典，写一段功能代码。
-40.如何把元组("a","b")和元组(1,2)，变为字典{"a":1,"b":2}
+t1=("a","b")
+t2=(1,2)
+
+d3={t1[i]:t2[i] for i in range(len(t1))}
+print(d3)
+
 
 综合
 
-41.Python 常用的数据结构的类型及其特性？
-<img src="https://pic4.zhimg.com/50/v2-3774e05a878688a01233e58eedd189a4_hd.jpg" data-caption="" data-size="normal" data-rawwidth="829" data-rawheight="103" class="origin_image zh-lightbox-thumb" width="829" data-original="https://pic4.zhimg.com/v2-3774e05a878688a01233e58eedd189a4_r.jpg"/>
-42.如何交换字典 {"A"：1,"B"：2}的键和值？
-43.Python 里面如何实现 tuple 和 list 的转换？
-44.我们知道对于列表可以使用切片操作进行部分元素的选择，那么如何对生成器类型的对象实现相同的功能呢？
-45.请将[i for i in range(3)]改成生成器
-46.a="hello"和 b="你好"编码成 bytes 类型
-47.下面的代码输出结果是什么？
-<img src="https://pic2.zhimg.com/50/v2-9ece529b1810bbd9052e929e4dbb760a_hd.jpg" data-caption="" data-size="normal" data-rawwidth="837" data-rawheight="59" class="origin_image zh-lightbox-thumb" width="837" data-original="https://pic2.zhimg.com/v2-9ece529b1810bbd9052e929e4dbb760a_r.jpg"/>
-48.下面的代码输出的结果是什么?
-<img src="https://pic2.zhimg.com/50/v2-e8e5e086d9e9c7b45861717d33de5986_hd.jpg" data-caption="" data-size="normal" data-rawwidth="832" data-rawheight="59" class="origin_image zh-lightbox-thumb" width="832" data-original="https://pic2.zhimg.com/v2-e8e5e086d9e9c7b45861717d33de5986_r.jpg"/>
+？51.Python 常用的数据结构的类型及其特性？
+A={1:0, 2:0, 3:0}
+B={"a":0, "b":0, "c":0}
+C={(1,2):0, (2,3):0}
+D={[1,2]:0, [2,3]:0}
+
+数字，字符串，列表，元组，字典，文件，集合
+特性：序列/映射/集合，可变/不可变，可迭代
+？？？？？？？？？？
+
+52.如何交换字典 {"A"：1,"B"：2}的键和值？
+
+d1={"A":1, "B":2}
+d2={v:k for k,v in d1.items()}
+
+53.Python 里面如何实现 tuple 和 list 的转换？
+
+l=list(t)
+#l=[i for i in t]
+t=tuple(l)
+
+54.我们知道对于列表可以使用切片操作进行部分元素的选择，那么如何对生成器类型的对象实现相同的功能呢？
+
+itertools模块下的islice方法
+
+for x in islice(Fib(), 10, 20):
+    print(x)
+
+55.请将[i for i in range(3)]改成生成器
+
+(i for i in range(3))
+
+56.a="hello"和 b="你好"编码成 bytes 类型
+
+b'hello'  字符串内容都是 ASCII 字符
+bytes(a.encoding='utf-8')
+a.encode('utf-8')
+
+57.下面的代码输出结果是什么？
+a=(1,2,3,[4,5,6,7],8)
+a[2]-2
+
+>>>1
+
+58.下面的代码输出的结果是什么?
+a=(1,2,3,[4,5,6,7],8)
+a[3][0]-2
+
+>>>2
+
 操作类题目
 
-49.Python 交换两个变量的值
+*49.Python 交换两个变量的值
 50.在读文件操作的时候会使用 read、readline 或者 readlines，简述它们各自的作用
 51.json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？
 52.json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？
