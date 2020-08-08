@@ -97,4 +97,6 @@
 
 997* 找到小镇的法官：a=[0]*n
 
+1038* 从二叉搜索树到更大和树：def __init__(self)
+
 面试67* 把字符串转换成整数：max(min(nums, INT_MAX), INT_MIN)
